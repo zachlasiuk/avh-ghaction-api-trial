@@ -1,4 +1,4 @@
-name: build-and-deploy
+name: basic-token-validation
 
 # Controls when the workflow will run
 on:
