@@ -23,9 +23,9 @@ jobs:
         with:
           fetch-depth: 0 
 
-      - name: Python pre-processing
+      - name: AVH test
         run: |
           python --version
-          python ./aws-api-proxy-test.py
+          python ./all-in-one-proxy-test.py
         env:
             AVH_TOKEN: ${{ secrets.AVH_TOKEN }}
