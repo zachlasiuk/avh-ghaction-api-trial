@@ -14,12 +14,13 @@ def get_token():
 def lambda_connect(auth_token):
     print('INFO: Connecting to avh-proxy-hello-world function')
 
-    api_endpoint = "https://m7qcvig326.execute-api.us-east-1.amazonaws.com/test-1/helloworld"
-    headers = {"Authorization": auth_token}
+    api_endpoint = "https://gseyg7w2noryoser43ofo7cexu0wwiqb.lambda-url.us-east-1.on.aws/"
+    headers = {'AVH_AUTHORIZATION_TOKEN': auth_token, 'Content-type': 'application/json'}
+    querystring = {'myCustomParameter': 'squirrel'}
     body = {"greeter": "Zach"}
 
     # Call the API
-    response = requests.post(api_endpoint, headers=headers, json=body)
+    response = requests.post(url=api_endpoint, params=querystring, data=body, headers=headers)
     return response.status_code, response.headers, response.text
 
 

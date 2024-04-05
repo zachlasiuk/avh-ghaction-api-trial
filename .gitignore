@@ -1,2 +1,4 @@
 token.txt
 set_env_var.txt
+venv
+production_to_lambda_zip*
