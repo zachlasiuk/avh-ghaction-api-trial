@@ -1,4 +1,4 @@
-name: build-and-deploy
+name: basic-token-validation
 
 # Controls when the workflow will run
 on:
@@ -11,8 +11,8 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
-  build_and_deploy_s3:
+  # This workflow contains a single job called "execute"
+  execute:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
@@ -23,9 +23,9 @@ jobs:
         with:
           fetch-depth: 0 
 
-      - name: Python pre-processing
+      - name: AVH test
         run: |
           python --version
-          python ./aws-api-proxy-test.py
+          python ./all-in-one-proxy-test.py
         env:
-            SECRET_TOKEN: ${{ secrets.AVH_TOKEN }}
+            AVH_TOKEN: ${{ secrets.AVH_TOKEN }}
