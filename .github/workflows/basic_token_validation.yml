@@ -28,4 +28,4 @@ jobs:
           python --version
           python ./aws-api-proxy-test.py
         env:
-            SECRET_TOKEN: ${{ secrets.AVH_TOKEN }}
+            AVH_TOKEN: ${{ secrets.AVH_TOKEN }}
